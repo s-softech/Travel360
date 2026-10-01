@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Instagram UI</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ==============================
+           MAIN CONTAINER
+        ============================== */
+
+        .instagram {
+            max-width: 600px;
+            margin: auto;
+            min-height: 100vh;
+            background: #000;
+        }
+
+        /* ==============================
+           TOP NAVBAR
+        ============================== */
+
+        .top-nav {
+            height: 65px;
+            padding: 10px 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: #000;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-family: cursive;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-icons i,
+        .plus-btn {
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        /* ==============================
+           STORIES
+        ============================== */
+
+        .stories {
+            display: flex;
+            gap: 15px;
+
+            padding: 12px 10px;
+
+            overflow-x: auto;
+
+            border-bottom: 1px solid #222;
+        }
+
+        .stories::-webkit-scrollbar {
+            display: none;
+        }
+
+        .story {
+            min-width: 75px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .story-image {
+            width: 70px;
+            height: 70px;
+
+            border-radius: 50%;
+
+            padding: 3px;
+
+            background: linear-gradient(
+                45deg,
+                #feda75,
+                #fa7e1e,
+                #d62976,
+                #962fbf,
+                #4f5bd5
+            );
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 3px solid #000;
+        }
+
+        .story-name {
+            font-size: 12px;
+            margin-top: 5px;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Add Story */
+
+        .add-story {
+            position: relative;
+        }
+
+        .add-icon {
+            position: absolute;
+
+            right: 0;
+            bottom: 20px;
+
+            background: #0095f6;
+
+            width: 22px;
+            height: 22px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 14px;
+
+            border: 2px solid #000;
+        }
+
+        /* ==============================
+           POST
+        ============================== */
+
+        .post {
+            border-bottom: 8px solid #111;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+
+            padding: 12px;
+        }
+
+        .profile-image {
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            margin-right: 10px;
+        }
+
+        .username {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .audio {
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        .more {
+            margin-left: auto;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* ==============================
+           POST IMAGE
+        ============================== */
+
+        .post-image {
+            width: 100%;
+
+            aspect-ratio: 1 / 1;
+
+            object-fit: cover;
+
+            cursor: pointer;
+        }
+
+        /* Double click heart */
+
+        .image-container {
+            position: relative;
+        }
+
+        .big-heart {
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%) scale(0);
+
+            font-size: 100px;
+
+            color: white;
+
+            pointer-events: none;
+
+            transition: 0.3s;
+        }
+
+        .big-heart.show {
+            transform: translate(-50%, -50%) scale(1);
+
+            animation: heartAnimation 0.8s;
+        }
+
+        @keyframes heartAnimation {
+
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.3);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        /* ==============================
+           POST ACTIONS
+        ============================== */
+
+        .post-actions {
+            display: flex;
+
+            padding: 10px;
+
+            gap: 20px;
+
+            font-size: 25px;
+        }
+
+        .post-actions i {
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .post-actions i:hover {
+            transform: scale(1.15);
+        }
+
+        .save {
+            margin-left: auto;
+        }
+
+        .liked {
+            color: #ff3040 !important;
+        }
+
+        .saved {
+            color: #ffd700;
+        }
+
+        /* ==============================
+           POST CONTENT
+        ============================== */
+
+        .post-content {
+            padding: 0 12px 12px;
+        }
+
+        .likes {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .caption {
+            font-size: 14px;
+        }
+
+        .view-comments {
+            color: #777;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        /* ==============================
+           COMMENT AREA
+        ============================== */
+
+        .comment-box {
+            display: none;
+
+            padding: 10px;
+        }
+
+        .comment-box input {
+            width: 85%;
+
+            background: #222;
+
+            border: none;
+
+            color: white;
+
+            padding: 10px;
+
+            border-radius: 20px;
+
+            outline: none;
+        }
+
+        .comment-box button {
+            width: 12%;
+
+            border: none;
+
+            background: transparent;
+
+            color: #0095f6;
+
+            font-weight: bold;
+        }
+
+        .comments {
+            padding: 0 12px;
+        }
+
+        .comment {
+            font-size: 13px;
+            padding: 3px 0;
+        }
+
+        /* ==============================
+           BOTTOM NAV
+        ============================== */
+
+        .bottom-nav {
+            position: fixed;
+
+            bottom: 0;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 100%;
+
+            max-width: 600px;
+
+            height: 60px;
+
+            background: #000;
+
+            border-top: 1px solid #222;
+
+            display: flex;
+
+            justify-content: space-around;
+
+            align-items: center;
+
+            z-index: 1000;
+        }
+
+        .bottom-nav i {
+            font-size: 25px;
+
+            cursor: pointer;
+        }
+
+        .active {
+            color: white;
+        }
+
+        /* ==============================
+           SEARCH
+        ============================== */
+
+        .search-box {
+            display: none;
+
+            position: fixed;
+
+            top: 65px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            max-width: 600px;
+
+            width: 100%;
+
+            background: #111;
+
+            padding: 15px;
+
+            z-index: 999;
+        }
+
+        .search-box input {
+            width: 100%;
+
+            padding: 12px 20px;
+
+            border: none;
+
+            border-radius: 25px;
+
+            background: #222;
+
+            color: white;
+
+            outline: none;
+        }
+
+        /* ==============================
+           STORY MODAL
+        ============================== */
+
+        .story-modal {
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            background: #000;
+
+            z-index: 2000;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .story-modal img {
+            max-width: 500px;
+
+            width: 100%;
+
+            height: 90vh;
+
+            object-fit: cover;
+        }
+
+        .close-story {
+            position: absolute;
+
+            top: 20px;
+
+            right: 25px;
+
+            font-size: 35px;
+
+            cursor: pointer;
+        }
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media(max-width: 600px) {
+
+            .instagram {
+                width: 100%;
+            }
+
+            .post-image {
+                aspect-ratio: 1 / 1;
+            }
+
+            .logo {
+                font-size: 26px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="instagram">
+
+    <!-- ==========================
+         TOP NAVBAR
+    =========================== -->
+
+    <div class="top-nav">
+
+        <i class="bi bi-plus-lg plus-btn"
+           onclick="addPost()"></i>
+
+        <div class="logo">
+            Instagram
+        </div>
+
+        <div class="nav-icons">
+
+            <i class="bi bi-heart"
+               onclick="showNotification()"></i>
+
+            <i class="bi bi-chat"
+               onclick="showMessage()"></i>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================
+         SEARCH
+    =========================== -->
+
+    <div class="search-box" id="searchBox">
+
+        <input
+            type="text"
+            placeholder="Search"
+            id="searchInput"
+            onkeyup="searchUser()">
+
+    </div>
+
+
+    <!-- ==========================
+         STORIES
+    =========================== -->
+
+    <div class="stories">
+
+        <!-- Your Story -->
+
+        <div class="story add-story"
+             onclick="openStory(0)">
+
+            <div class="story-image">
+
+                <img src="https://picsum.photos/100/100?random=1">
+
+            </div>
+
+            <div class="add-icon">
+                +
+            </div>
+
+            <div class="story-name">
+                Your story
+            </div>
+
+        </div>
+
+
+        <!-- Story 2 -->
+
+        <div class="story"
+             onclick="openStory(1)">
+
+            <div class="story-image">
+
+                <img src="https://picsum.photos/100/100?random=2">
+
+            </div>
+
+            <div class="story-name">
+                _mr_raju
+            </div>
+
+        </div>
+
+
+        <!-- Story 3 -->
+
+        <div class="story"
+             onclick="openStory(2)">
+
+            <div class="story-image">
+
+                <img src="https://picsum.photos/100/100?random=3">
+
+            </div>
+
+            <div class="story-name">
+                shaikmohamm
+            </div>
+
+        </div>
+
+
+        <!-- Story 4 -->
+
+        <div class="story"
+             onclick="openStory(3)">
+
+            <div class="story-image">
+
+                <img src="https://picsum.photos/100/100?random=4">
+
+            </div>
+
+            <div class="story-name">
+                duke_rider
+            </div>
+
+        </div>
+
+
+        <!-- Story 5 -->
+
+        <div class="story"
+             onclick="openStory(4)">
+
+            <div class="story-image">
+
+                <img src="https://picsum.photos/100/100?random=5">
+
+            </div>
+
+            <div class="story-name">
+                syntaxerror
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================
+         POSTS CONTAINER
+    =========================== -->
+
+    <div id="posts"></div>
+
+</div>
+
+
+<!-- ==========================
+     BOTTOM NAVIGATION
+=========================== -->
+
+<div class="bottom-nav">
+
+    <i class="bi bi-house-fill"
+       onclick="home()"></i>
+
+    <i class="bi bi-search"
+       onclick="toggleSearch()"></i>
+
+    <i class="bi bi-plus-square"
+       onclick="addPost()"></i>
+
+    <i class="bi bi-play-btn"
+       onclick="showReels()"></i>
+
+    <i class="bi bi-person-circle"
+       onclick="showProfile()"></i>
+
+</div>
+
+
+<!-- ==========================
+     STORY MODAL
+=========================== -->
+
+<div class="story-modal" id="storyModal">
+
+    <span class="close-story"
+          onclick="closeStory()">
+        &times;
+    </span>
+
+    <img id="storyImage">
+
+</div>
+
+
+<script>
+
+    /* =================================
+       POST DATA
+    ================================= */
+
+    let posts = [
+
+        {
+            username: "code.abhii07",
+
+            profile:
+            "https://picsum.photos/100/100?random=10",
+
+            image:
+            "https://picsum.photos/600/600?random=20",
+
+            likes: 1204,
+
+            caption:
+            "DSA Bootcamp 🔥 Start your coding journey!",
+
+            comments: [
+                "Amazing 🔥",
+                "Very useful!"
+            ]
+        },
+
+
+        {
+            username: "syntaxerroracademy1",
+
+            profile:
+            "https://picsum.photos/100/100?random=11",
+
+            image:
+            "https://picsum.photos/600/600?random=30",
+
+            likes: 850,
+
+            caption:
+            "Learn. Code. Build. Repeat. 💻",
+
+            comments: [
+                "Great post!",
+                "Awesome 🔥"
+            ]
+        }
+
+    ];
+
+
+    /* =================================
+       DISPLAY POSTS
+    ================================= */
+
+    function displayPosts() {
+
+        let container =
+            document.getElementById("posts");
+
+        container.innerHTML = "";
+
+
+        posts.forEach((post, index) => {
+
+            let commentsHTML = "";
+
+            post.comments.forEach(comment => {
+
+                commentsHTML +=
+                `<div class="comment">
+                    👤 ${comment}
+                </div>`;
+
+            });
+
+
+            container.innerHTML += `
+
+                <div class="post">
+
+                    <!-- POST HEADER -->
+
+                    <div class="post-header">
+
+                        <img
+                            src="${post.profile}"
+                            class="profile-image">
+
+                        <div>
+
+                            <div class="username">
+                                ${post.username}
+                            </div>
+
+                            <div class="audio">
+                                🎵 Original Audio
+                            </div>
+
+                        </div>
+
+                        <i class="bi bi-three-dots more"
+                           onclick="postMenu()"></i>
+
+                    </div>
+
+
+                    <!-- POST IMAGE -->
+
+                    <div class="image-container">
+
+                        <img
+                            src="${post.image}"
+                            class="post-image"
+                            ondblclick="doubleLike(${index})">
+
+                        <i
+                            class="bi bi-heart-fill big-heart"
+                            id="bigHeart${index}">
+                        </i>
+
+                    </div>
+
+
+                    <!-- ACTIONS -->
+
+                    <div class="post-actions">
+
+                        <i
+                            class="bi bi-heart"
+                            id="like${index}"
+                            onclick="likePost(${index})">
+                        </i>
+
+                        <i
+                            class="bi bi-chat"
+                            onclick="toggleComments(${index})">
+                        </i>
+
+                        <i
+                            class="bi bi-send"
+                            onclick="sharePost()">
+                        </i>
+
+                        <i
+                            class="bi bi-bookmark save"
+                            id="save${index}"
+                            onclick="savePost(${index})">
+                        </i>
+
+                    </div>
+
+
+                    <!-- CONTENT -->
+
+                    <div class="post-content">
+
+                        <div
+                            class="likes"
+                            id="likes${index}">
+                            ${post.likes} likes
+                        </div>
+
+                        <div class="caption">
+
+                            <b>${post.username}</b>
+                            ${post.caption}
+
+                        </div>
+
+                        <div
+                            class="view-comments"
+                            onclick="toggleComments(${index})">
+
+                            View all ${post.comments.length} comments
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- COMMENTS -->
+
+                    <div
+                        class="comments"
+                        id="comments${index}">
+
+                        ${commentsHTML}
+
+                    </div>
+
+
+                    <!-- COMMENT INPUT -->
+
+                    <div
+                        class="comment-box"
+                        id="commentBox${index}">
+
+                        <input
+                            type="text"
+                            id="commentInput${index}"
+                            placeholder="Add a comment...">
+
+                        <button
+                            onclick="addComment(${index})">
+
+                            Post
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+    }
+
+
+    /* =================================
+       LIKE POST
+    ================================= */
+
+    function likePost(index) {
+
+        let icon =
+            document.getElementById("like" + index);
+
+        let likes =
+            document.getElementById("likes" + index);
+
+
+        if (icon.classList.contains("liked")) {
+
+            posts[index].likes--;
+
+            icon.classList.remove("liked");
+
+            icon.classList.remove("bi-heart-fill");
+
+            icon.classList.add("bi-heart");
+
+        }
+
+        else {
+
+            posts[index].likes++;
+
+            icon.classList.add("liked");
+
+            icon.classList.remove("bi-heart");
+
+            icon.classList.add("bi-heart-fill");
+
+        }
+
+
+        likes.innerText =
+            posts[index].likes + " likes";
+
+    }
+
+
+    /* =================================
+       DOUBLE CLICK LIKE
+    ================================= */
+
+    function doubleLike(index) {
+
+        let icon =
+            document.getElementById("like" + index);
+
+
+        if (!icon.classList.contains("liked")) {
+
+            likePost(index);
+
+        }
+
+
+        let heart =
+            document.getElementById("bigHeart" + index);
+
+        heart.classList.add("show");
+
+
+        setTimeout(() => {
+
+            heart.classList.remove("show");
+
+        }, 700);
+
+    }
+
+
+    /* =================================
+       SAVE POST
+    ================================= */
+
+    function savePost(index) {
+
+        let icon =
+            document.getElementById("save" + index);
+
+
+        icon.classList.toggle("saved");
+
+
+        if (icon.classList.contains("saved")) {
+
+            icon.classList.remove("bi-bookmark");
+
+            icon.classList.add("bi-bookmark-fill");
+
+        }
+
+        else {
+
+            icon.classList.add("bi-bookmark”);
+

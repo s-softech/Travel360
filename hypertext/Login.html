@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MyWebsite - Login</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+
+        /* ================= BODY ================= */
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #667eea,
+                #764ba2,
+                #f093fb,
+                #4facfe
+            );
+
+            background-size: 400% 400%;
+
+            animation: gradientBG 12s ease infinite;
+        }
+
+        @keyframes gradientBG {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            background: linear-gradient(
+                90deg,
+                #141e30,
+                #243b55
+            ) !important;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin-left: 10px;
+
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #ffd369 !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: #ffd369 !important;
+            font-weight: bold;
+        }
+
+
+        /* ================= MAIN ================= */
+
+        .main-container {
+            flex: 1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 50px 15px;
+        }
+
+
+        /* ================= LOGIN CARD ================= */
+
+        .register-card {
+
+            width: 100%;
+            max-width: 500px;
+
+            padding: 40px;
+
+            border-radius: 25px;
+
+            background: rgba(255,255,255,0.95);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.25);
+
+            backdrop-filter: blur(10px);
+
+            animation: cardAnimation 1s ease;
+        }
+
+        @keyframes cardAnimation {
+
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* ================= TITLE ================= */
+
+        .login-icon {
+
+            width: 80px;
+            height: 80px;
+
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #667eea,
+                #764ba2
+            );
+
+            color: white;
+
+            font-size: 38px;
+
+            box-shadow:
+                0 8px 20px rgba(102,126,234,0.5);
+        }
+
+        .login-title {
+
+            margin-top: 15px;
+
+            font-weight: bold;
+
+            background: linear-gradient(
+                90deg,
+                #667eea,
+                #764ba2,
+                #f093fb
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        /* ================= INPUT ================= */
+
+        .form-label {
+
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-control {
+
+            height: 50px;
+
+            border-radius: 12px;
+
+            border: 2px solid #e0e0e0;
+
+            transition: 0.3s;
+
+            padding-left: 15px;
+        }
+
+        .form-control:focus {
+
+            border-color: #667eea;
+
+            box-shadow:
+                0 0 10px rgba(102,126,234,0.3);
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .login-btn {
+
+            height: 52px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            color: white;
+
+            background: linear-gradient(
+                90deg,
+                #667eea,
+                #764ba2
+            );
+
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 20px rgba(118,75,162,0.4);
+
+            background: linear-gradient(
+                90deg,
+                #764ba2,
+                #667eea
+            );
+        }
+
+
+        /* ================= LINKS ================= */
+
+        .register-link {
+
+            color: #667eea;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .register-link:hover {
+
+            color: #764ba2;
+
+            text-decoration: underline;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background: rgba(20,30,48,0.95);
+
+            color: white;
+
+            padding: 18px;
+
+            text-align: center;
+
+            font-size: 14px;
+        }
+
+        .footer-heart {
+            color: #ff4b5c;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 576px) {
+
+            .register-card {
+
+                padding: 30px 20px;
+
+            }
+
+            .navbar-brand {
+
+                font-size: 20px;
+
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+    <div class="container-fluid">
+
+        <a class="navbar-brand fw-bold" href="#">
+            <i class="bi bi-stars"></i>
+            MyWebsite
+        </a>
+
+
+        <!-- Mobile Menu Button -->
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <!-- Menu -->
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-house"></i>
+                        Home
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="./i2.html">
+                        <i class="bi bi-person-plus"></i>
+                        Registration
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link active" href="#">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        Login
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-envelope"></i>
+                        Contact
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="main-container">
+
+    <div class="register-card">
+
+
+        <!-- Login Icon -->
+
+        <div class="login-icon">
+
+            <i class="bi bi-person-lock"></i>
+
+        </div>
+
+
+        <!-- Title -->
+
+        <h2 class="text-center login-title">
+
+            Welcome Back!
+
+        </h2>
+
+        <p class="text-center text-muted mb-4">
+
+            Login to continue to MyWebsite
+
+        </p>
+
+
+
+        <!-- ================= FORM ================= -->
+
+        <form>
+
+
+            <!-- Username -->
+
+            <div class="mb-4">
+
+                <label class="form-label">
+
+                    <i class="bi bi-person-fill"></i>
+                    Username
+
+                </label>
+
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter your username"
+                    required>
+
+            </div>
+
+
+
+            <!-- Password -->
+
+            <div class="mb-4">
+
+                <label class="form-label">
+
+                    <i class="bi bi-lock-fill"></i>
+                    Password
+
+                </label>
+
+                <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Enter your password"
+                    required>
+
+            </div>
+
+
+
+            <!-- Remember Me -->
+
+            <div class="d-flex justify-content-between mb-4">
+
+                <div class="form-check">
+
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="remember">
+
+                    <label
+                        class="form-check-label"
+                        for="remember">
+
+                        Remember me
+
+                    </label>
+
+                </div>
+
+
+                <a href="#" class="register-link">
+
+                    Forgot Password?
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Login Button -->
+
+            <div class="d-grid">
+
+                <button
+                    type="submit"
+                    class="login-btn">
+
+                    <i class="bi bi-box-arrow-in-right"></i>
+
+                    Login
+
+                </button>
+
+            </div>
+
+
+
+            <!-- Registration Link -->
+
+            <div class="text-center mt-4">
+
+                <span class="text-muted">
+
+                    Don't have an account?
+
+                </span>
+
+                <a
+                    href="./i2.html"
+                    class="register-link ms-1">
+
+                    Register Now
+
+                </a>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 MyWebsite |
+    All Rights Reserved
+
+    <br>
+
+    Made with
+    <span class="footer-heart">♥</span>
+    for our users
+
+</footer>
+
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>

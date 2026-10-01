@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Travel 360 | Explore The World</title>
+
+
+    <!-- ================= BOOTSTRAP ================= -->
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+
+    <!-- ================= BOOTSTRAP ICONS ================= -->
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- ================= GOOGLE FONT ================= -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- ================= CSS ================= -->
+
+    <style>
+
+        /* =====================================================
+                           GLOBAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f8fc;
+            color: #222;
+        }
+
+
+
+        /* =====================================================
+                           NAVBAR
+        ===================================================== */
+
+        .navbar {
+
+            background: rgba(5, 25, 48, 0.97);
+
+            padding: 15px 5%;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.18);
+        }
+
+
+        .navbar-brand {
+
+            color: white !important;
+
+            font-size: 28px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+
+        .navbar-brand i {
+
+            color: #00d4ff;
+
+            margin-right: 8px;
+        }
+
+
+        .navbar-nav .nav-link {
+
+            color: white !important;
+
+            font-size: 15px;
+
+            font-weight: 500;
+
+            margin-left: 10px;
+
+            padding: 10px 18px !important;
+
+            border-radius: 25px;
+
+            transition: 0.3s;
+        }
+
+
+        .navbar-nav .nav-link:hover {
+
+            background: #00bfff;
+
+            color: white !important;
+
+            transform: translateY(-2px);
+        }
+
+
+        .nav-contact {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00c6ff,
+                    #0072ff
+                );
+        }
+
+
+
+        /* =====================================================
+                           HERO SECTION
+        ===================================================== */
+
+        .hero {
+
+            min-height: 650px;
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            background:
+
+                linear-gradient(
+                    rgba(3,20,40,0.65),
+                    rgba(3,20,40,0.45)
+                ),
+
+                url("./travel.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+
+        .hero-content {
+
+            color: white;
+
+            max-width: 700px;
+
+            padding: 50px 20px;
+        }
+
+
+        .small-title {
+
+            color: #00d9ff;
+
+            font-size: 18px;
+
+            font-weight: 600;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+
+        .hero h1 {
+
+            font-size: 65px;
+
+            font-weight: 800;
+
+            line-height: 1.1;
+
+            margin: 15px 0 20px;
+        }
+
+
+        .hero h1 span {
+
+            color: #00d9ff;
+        }
+
+
+        .hero p {
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            color: #e8f1f8;
+        }
+
+
+        .hero-buttons {
+
+            margin-top: 30px;
+        }
+
+
+        .btn-explore {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00d4ff,
+                    #0072ff
+                );
+
+            border: none;
+
+            color: white;
+
+            padding: 14px 30px;
+
+            border-radius: 30px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+
+        .btn-explore:hover {
+
+            color: white;
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 10px 25px rgba(0,150,255,0.4);
+        }
+
+
+        .btn-outline-custom {
+
+            color: white;
+
+            border: 2px solid white;
+
+            padding: 12px 28px;
+
+            border-radius: 30px;
+
+            margin-left: 10px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+
+        .btn-outline-custom:hover {
+
+            background: white;
+
+            color: #0072ff;
+
+            transform: translateY(-4px);
+        }
+
+
+
+        /* =====================================================
+                           SERVICES
+        ===================================================== */
+
+        .intro {
+
+            padding: 80px 0;
+
+            text-align: center;
+
+            background: white;
+        }
+
+
+        .section-title {
+
+            font-size: 40px;
+
+            font-weight: 800;
+
+            color: #08223d;
+        }
+
+
+        .section-title span {
+
+            color: #0072ff;
+        }
+
+
+        .section-description {
+
+            max-width: 750px;
+
+            margin: 15px auto 50px;
+
+            color: #667085;
+
+            line-height: 1.8;
+        }
+
+
+
+        /* =====================================================
+                           FEATURE CARDS
+        ===================================================== */
+
+        .feature-card {
+
+            background: white;
+
+            padding: 35px 25px;
+
+            border-radius: 20px;
+
+            height: 100%;
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,0.08);
+
+            transition: 0.4s;
+        }
+
+
+        .feature-card:hover {
+
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 20px 40px rgba(0,0,0,0.15);
+        }
+
+
+        .feature-icon {
+
+            width: 70px;
+
+            height: 70px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: auto auto 20px;
+
+            border-radius: 50%;
+
+            font-size: 30px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00c6ff,
+                    #0072ff
+                );
+
+            transition: 0.4s;
+        }
+
+
+        .feature-card:hover .feature-icon {
+
+            transform: rotateY(360deg);
+
+        }
+
+
+        .feature-card h4 {
+
+            font-weight: 700;
+
+            color: #08223d;
+        }
+
+
+        .feature-card p {
+
+            color: #6c757d;
+
+            line-height: 1.7;
+        }
+
+
+
+        /* =====================================================
+                         DESTINATIONS
+        ===================================================== */
+
+        .destinations {
+
+            background: #eef6fc;
+
+            padding: 80px 0;
+
+            overflow: visible;
+        }
+
+
+        /* =====================================================
+                     DESTINATION CARD
+        ===================================================== */
+
+        .destination-card {
+
+            position: relative;
+
+            height: 350px;
+
+            border-radius: 25px;
+
+            overflow: hidden;
+
+            margin-bottom: 30px;
+
+            cursor: pointer;
+
+            background: #000;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.18);
+
+            transition:
+
+                transform 0.6s
+                cubic-bezier(0.25,0.8,0.25,1),
+
+                box-shadow 0.6s ease;
+
+            z-index: 1;
+        }
+
+
+        /* =====================================================
+                         COUNTRY IMAGE
+        ===================================================== */
+
+        .destination-card img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+
+                transform 0.8s
+                cubic-bezier(0.25,0.8,0.25,1),
+
+                filter 0.6s ease;
+        }
+
+
+        /* =====================================================
+                    DARK OVERLAY
+        ===================================================== */
+
+        .destination-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                linear-gradient(
+                    to bottom,
+                    rgba(0,0,0,0.05) 0%,
+                    rgba(0,0,0,0.25) 30%,
+                    rgba(0,0,0,0.95) 100%
+                );
+
+            opacity: 0;
+
+            transition:
+                opacity 0.6s ease;
+
+            z-index: 1;
+        }
+
+
+        /* =====================================================
+                     INFORMATION PANEL
+        ===================================================== */
+
+        .destination-overlay {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: 0;
+
+            padding: 35px 30px;
+
+            color: white;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: flex-end;
+
+            z-index: 2;
+
+            opacity: 0;
+
+            transform: translateY(45px);
+
+            transition:
+
+                opacity 0.6s ease,
+
+                transform 0.6s ease;
+        }
+
+
+        /* =====================================================
+                       COUNTRY NAME
+        ===================================================== */
+
+        .destination-overlay h3 {
+
+            font-size: 32px;
+
+            font-weight: 800;
+
+            margin-bottom: 15px;
+
+            transform: translateY(25px);
+
+            opacity: 0;
+
+            transition:
+
+                transform 0.6s ease,
+
+                opacity 0.6s ease;
+        }
+
+
+        /* =====================================================
+                       COUNTRY DESCRIPTION
+        ===================================================== */
+
+        .destination-overlay p {
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            color: #f5f5f5;
+
+            margin-bottom: 18px;
+
+            transform: translateY(25px);
+
+            opacity: 0;
+
+            transition:
+
+                transform 0.7s ease 0.1s,
+
+                opacity 0.7s ease 0.1s;
+        }
+
+
+        /* =====================================================
+                         BEST FOR BADGE
+        ===================================================== */
+
+        .destination-overlay .best-for {
+
+            display: inline-block;
+
+            width: fit-content;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #00d4ff,
+                    #0072ff
+                );
+
+            padding: 8px 15px;
+
+            border-radius: 25px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transform: translateY(25px);
+
+            opacity: 0;
+
+            transition:
+
+                transform 0.7s ease 0.2s,
+
+                opacity 0.7s ease 0.2s;
+        }
+
+
+        /* =====================================================
+                         HOVER CARD
+        ===================================================== */
+
+        .destination-card:hover {
+
+            /*
+             Card becomes BIG
+            */
+
+            transform:
+                scale(1.12)
+                translateY(-10px);
+
+            /*
+             Bring hovered card above
+             other cards
+            */
+
+            z-index: 50;
+
+            box-shadow:
+
+                0 30px 70px
+                rgba(0,0,0,0.45);
+        }
+
+
+        /* =====================================================
+                       IMAGE ZOOM
+        ===================================================== */
+
+        .destination-card:hover img {
+
+            transform: scale(1.20);
+
+            filter:
+
+                brightness(0.60)
+                saturate(1.20);
+        }
+
+
+        /* =====================================================
+                     SHOW DARK OVERLAY
+        ===================================================== */
+
+        .destination-card:hover::after {
+
+            opacity: 1;
+        }
+
+
+        /* =====================================================
+                  SHOW ALL INFORMATION
+        ===================================================== */
+
+        .destination-card:hover
+        .destination-overlay {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        .destination-card:hover
+        .destination-overlay h3 {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        .destination-card:hover
+        .destination-overlay p {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        .destination-card:hover
+        .destination-overlay .best-for {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+                     GLOW BORDER
+        ===================================================== */
+
+        .destination-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            border-radius: 25px;
+
+            border: 2px solid transparent;
+
+            z-index: 3;
+
+            pointer-events: none;
+
+            transition: 0.5s;
+        }
+
+
+        .destination-card:hover::before {
+
+            border-color:
+                rgba(255,255,255,0.7);
+
+            box-shadow:
+
+                inset 0 0 25px
+                rgba(255,255,255,0.15),
+
+                0 0 20px
+                rgba(0,200,255,0.4);
+
+            animation:
+                cardGlow 1.5s
+                infinite alternate;
+        }
+
+
+        @keyframes cardGlow {
+
+            from {
+
+                opacity: 0.4;
+
+            }
+
+            to {
+
+                opacity: 1;
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+                          ABOUT
+        ===================================================== */
+
+        .about {
+
+            padding: 90px 0;
+
+            background: white;
+        }
+
+
+        .about-image {
+
+            width: 100%;
+
+            height: 450px;
+
+            object-fit: cover;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.15);
+
+            transition: 0.5s;
+        }
+
+
+        .about-image:hover {
+
+            transform: scale(1.03);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.2);
+        }
+
+
+        .about-content {
+
+            padding: 20px 30px;
+        }
+
+
+        .about-content h2 {
+
+            font-size: 42px;
+
+            font-weight: 800;
+
+            color: #08223d;
+        }
+
+
+        .about-content h2 span {
+
+            color: #0072ff;
+        }
+
+
+        .about-content p {
+
+            color: #667085;
+
+            line-height: 1.9;
+        }
+
+
+        .about-list {
+
+            list-style: none;
+
+            margin-top: 25px;
+        }
+
+
+        .about-list li {
+
+            margin: 12px 0;
+
+            font-weight: 500;
+        }
+
+
+        .about-list i {
+
+            color: #00aaff;
+
+            margin-right: 10px;
+        }
+
+
+
+        /* =====================================================
+                           CTA
+        ===================================================== */
+
+        .cta {
+
+            padding: 80px 20px;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #0072ff,
+                    #00c6ff
+                );
+        }
+
+
+        .cta h2 {
+
+            font-size: 42px;
+
+            font-weight: 800;
+        }
+
+
+        .cta p {
+
+            margin: 15px auto 30px;
+
+            max-width: 650px;
+        }
+
+
+        .cta-button {
+
+            background: white;
+
+            color: #0072ff;
+
+            border: none;
+
+            padding: 14px 35px;
+
+            border-radius: 30px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+
+            cursor: pointer;
+        }
+
+
+        .cta-button:hover {
+
+            transform: scale(1.05);
+
+            box-shadow:
+                0 10px 25px rgba(0,0,0,0.2);
+        }
+
+
+
+        /* =====================================================
+                           FOOTER
+        ===================================================== */
+
+        footer {
+
+            background: #06182c;
+
+            color: white;
+
+            padding: 50px 0 20px;
+        }
+
+
+        footer h4 {
+
+            font-weight: 700;
+
+            margin-bottom: 20px;
+        }
+
+
+        footer p {
+
+            color: #aebdce;
+
+            line-height: 1.8;
+        }
+
+
+        .footer-links {
+
+            list-style: none;
+        }
+
+
+        .footer-links li {
+
+            margin: 10px 0;
+        }
+
+
+        .footer-links a {
+
+            color: #aebdce;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+
+        .footer-links a:hover {
+
+            color: #00c6ff;
+
+            padding-left: 5px;
+        }
+
+
+        .social-icons a {
+
+            display: inline-flex;
+
+            width: 40px;
+
+            height: 40px;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #102d4b;
+
+            color: white;
+
+            border-radius: 50%;
+
+            margin-right: 8px;
+
+            transition: 0.3s;
+        }
+
+
+        .social-icons a:hover {
+
+            background: #00aaff;
+
+            transform:
+                translateY(-4px)
+                rotate(10deg);
+        }
+
+
+        .copyright {
+
+            border-top:
+                1px solid #29415a;
+
+            margin-top: 40px;
+
+            padding-top: 20px;
+
+            text-align: center;
+
+            color: #8da1b5;
+        }
+
+
+
+        /* =====================================================
+                         RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 992px) {
+
+            /*
+             Reduce hover scale on tablets
+            */
+
+            .destination-card:hover {
+
+                transform:
+                    scale(1.06)
+                    translateY(-8px);
+            }
+
+        }
+
+
+        @media (max-width: 768px) {
+
+            .hero {
+
+                min-height: 550px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 42px;
+            }
+
+
+            .hero p {
+
+                font-size: 16px;
+            }
+
+
+            .btn-outline-custom {
+
+                margin-left: 0;
+
+                margin-top: 12px;
+            }
+
+
+            .section-title {
+
+                font-size: 32px;
+            }
+
+
+            .about-content {
+
+                padding: 30px 5px;
+            }
+
+
+            .about-content h2 {
+
+                font-size: 34px;
+            }
+
+
+            .about-image {
+
+                height: 300px;
+            }
+
+
+            .cta h2 {
+
+                font-size: 32px;
+            }
+
+
+            /*
+             Mobile cards don't become
+             too large
+            */
+
+            .destination-card:hover {
+
+                transform:
+                    scale(1.02)
+                    translateY(-5px);
+            }
+
+
+            .destination-overlay {
+
+                padding: 25px 20px;
+            }
+
+
+            .destination-overlay h3 {
+
+                font-size: 26px;
+            }
+
+
+            .destination-overlay p {
+
+                font-size: 13px;
+
+                line-height: 1.6;
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+                         NAVBAR
+===================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+    <a class="navbar-brand" href="#">
+
+        <i class="bi bi-airplane-fill"></i>
+
+        Travel 360
+
+    </a>
+
+
+    <button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarMenu">
+
+        <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+
+    <div class="collapse navbar-collapse"
+         id="navbarMenu">
+
+        <ul class="navbar-nav ml-auto">
+
+
+            <li class="nav-item">
+
+                <a class="nav-link"
+                   href="#home">
+
+                    <i class="bi bi-house"></i>
+
+                    Home
+
+                </a>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a class="nav-link"
+                   href="#destinations">
+
+                    <i class="bi bi-globe"></i>
+
+                    Destinations
+
+                </a>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a class="nav-link"
+                   href="#services">
+
+                    <i class="bi bi-stars"></i>
+
+                    Services
+
+                </a>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a class="nav-link"
+                   href="#about">
+
+                    <i class="bi bi-info-circle"></i>
+
+                    About
+
+                </a>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a class="nav-link nav-contact"
+                   href="#contact">
+
+                    <i class="bi bi-telephone"></i>
+
+                    Contact
+
+                </a>
+
+            </li>
+
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+                          HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+
+            <div class="small-title">
+
+                Explore • Dream • Discover
+
+            </div>
+
+
+            <h1>
+
+                Explore The
+
+                <span>World</span>
+
+                With Us
+
+            </h1>
+
+
+            <p>
+
+                Discover beautiful destinations,
+                experience different cultures and
+                create unforgettable memories.
+
+                Your next adventure starts here.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+
+                <a href="#destinations"
+                   class="btn btn-explore">
+
+                    <i class="bi bi-compass"></i>
+
+                    Explore Destinations
+
+                </a>
+
+
+                <a href="#contact"
+                   class="btn btn-outline-custom">
+
+                    Contact Us
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                         SERVICES
+===================================================== -->
+
+<section class="intro"
+         id="services">
+
+    <div class="container">
+
+
+        <h2 class="section-title">
+
+            Why Choose
+
+            <span>Travel 360?</span>
+
+        </h2>
+
+
+        <p class="section-description">
+
+            We help you plan amazing journeys with
+            beautiful destinations, affordable packages
+            and personalized travel experiences.
+
+        </p>
+
+
+        <div class="row">
+
+
+            <!-- SERVICE 1 -->
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <div class="feature-card">
+
+
+                    <div class="feature-icon">
+
+                        <i class="bi bi-map"></i>
+
+                    </div>
+
+
+                    <h4>
+
+                        Amazing Destinations
+
+                    </h4>
+
+
+                    <p>
+
+                        Explore some of the world's
+                        most beautiful and exciting
+                        destinations.
+
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SERVICE 2 -->
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <div class="feature-card">
+
+
+                    <div class="feature-icon">
+
+                        <i class="bi bi-wallet2"></i>
+
+                    </div>
+
+
+                    <h4>
+
+                        Affordable Packages
+
+                    </h4>
+
+
+                    <p>
+
+                        Find budget-friendly travel
+                        packages designed for every
+                        type of traveler.
+
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SERVICE 3 -->
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <div class="feature-card">
+
+
+                    <div class="feature-icon">
+
+                        <i class="bi bi-headset"></i>
+
+                    </div>
+
+
+                    <h4>
+
+                        24/7 Support
+
+                    </h4>
+
+
+                    <p>
+
+                        Our team is always ready to
+                        help you plan your perfect
+                        journey.
+
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                       DESTINATIONS
+===================================================== -->
+
+<section class="destinations"
+         id="destinations">
+
+    <div class="container">
+
+
+        <h2 class="section-title text-center">
+
+            Popular
+
+            <span>Destinations</span>
+
+        </h2>
+
+
+        <p class="section-description text-center">
+
+            Move your cursor over a destination
+            to discover more information.
+
+        </p>
+
+
+        <div class="row">
+
+
+            <!-- ================= ITALY ================= -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="destination-card">
+
+
+                    <img src="./italy.jpg"
+                         alt="Italy">
+
+
+                    <div class="destination-overlay">
+
+
+                        <h3>
+
+                            🇮🇹 Italy
+
+                        </h3>
+
+
+                        <p>
+
+                            Explore Rome, Venice and
+                            Florence. Visit the Colosseum,
+                            enjoy authentic Italian food
+                            and experience Italy's rich
+                            history and culture.
+
+                        </p>
+
+
+                        <span class="best-for">
+
+                            ⭐ Best for: History & Culture
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= AUSTRALIA ================= -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="destination-card">
+
+
+                    <img src="./Australia.jpeg"
+                         alt="Australia">
+
+
+                    <div class="destination-overlay">
+
+
+                        <h3>
+
+                            🇦🇺 Australia
+
+                        </h3>
+
+
+                        <p>
+
+                            Discover Sydney, Melbourne
+                            and the Great Barrier Reef.
+                            Enjoy beautiful beaches,
+                            wildlife and exciting adventures.
+
+                        </p>
+
+
+                        <span class="best-for">
+
+                            ⭐ Best for: Beaches & Adventure
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= FRANCE ================= -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="destination-card">
+
+
+                    <img src="./france.jpg"
+                         alt="France">
+
+
+                    <div class="destination-overlay">
+
+
+                        <h3>
+
+                            🇫🇷 France
+
+                        </h3>
+
+
+                        <p>
+
+                            Visit Paris and the Eiffel
+                            Tower. Experience French food,
+                            art, fashion and beautiful
+                            architecture.
+
+                        </p>
+
+
+                        <span class="best-for">
+
+                            ⭐ Best for: Romance & Art
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= JAPAN ================= -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="destination-card">
+
+
+                    <img src="./japan.jpg"
+                         alt="Japan">
+
+
+                    <div class="destination-overlay">
+
+
+                        <h3>
+
+                            🇯🇵 Japan
+
+                        </h3>
+
+
+                        <p>
+
+                            Explore Tokyo, Kyoto and
+                            Mount Fuji. Experience Japanese
+                            traditions, technology, food
+                            and beautiful nature.
+
+                        </p>
+
+
+                        <span class="best-for">
+
+                            ⭐ Best for: Culture & Technology
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= NEW ZEALAND ================= -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="destination-card">
+
+
+                    <img src="./newzland.jpg"
+                         alt="New Zealand">
+
+
+                    <div class="destination-overlay">
+
+
+                        <h3>
+
+                            🇳🇿 New Zealand
+
+                        </h3>
+
+
+                        <p>
+
+                            Discover spectacular mountains,
+                            lakes and green landscapes.
+                            Perfect for hiking and
+                            outdoor adventures.
+
+                        </p>
+
+
+                        <span class="best-for">
+
+                            ⭐ Best for: Nature & Adventure
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= SWITZERLAND ================= -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="destination-card">
+
+
+                    <img src="./Switzwer.jpeg"
+                         alt="Switzerland">
+
+
+                    <div class="destination-overlay">
+
+
+                        <h3>
+
+                            🇨🇭 Switzerland
+
+                        </h3>
+
+
+                        <p>
+
+                            Experience the Swiss Alps,
+                            snowy mountains, beautiful
+                            lakes and charming villages.
+
+                        </p>
+
+
+                        <span class="best-for">
+
+                            ⭐ Best for: Mountains & Snow
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                          ABOUT
+===================================================== -->
+
+<section class="about"
+         id="about">
+
+    <div class="container">
+
+
+        <div class="row align-items-center">
+
+
+            <div class="col-lg-6 mb-4">
+
+                <img src="./thailand.jpg"
+                     class="about-image"
+                     alt="Thailand">
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="about-content">
+
+
+                    <h2>
+
+                        Discover The World
+
+                        <span>
+                            With Travel 360
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Welcome to Travel 360,
+                        your companion for discovering
+                        the world's most beautiful places.
+
+                        From peaceful beaches and
+                        breathtaking mountains to exciting
+                        cities and cultural experiences,
+                        we help you create unforgettable
+                        journeys.
+
+                    </p>
+
+
+                    <ul class="about-list">
+
+
+                        <li>
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Personalized travel experiences
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Budget-friendly travel packages
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Expert travel guidance
+
+                        </li>
+
+
+                        <li>
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Safe and comfortable journeys
+
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                           CTA
+===================================================== -->
+
+<section class="cta"
+         id="contact">
+
+
+    <h2>
+
+        Ready For Your Next Adventure?
+
+    </h2>
+
+
+    <p>
+
+        Don't just dream about your next trip.
+        Start planning your unforgettable journey today.
+
+    </p>
+
+
+    <button class="cta-button">
+
+        <i class="bi bi-airplane"></i>
+
+        Start Your Journey
+
+    </button>
+
+
+</section>
+
+
+
+<!-- =====================================================
+                          FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+
+        <div class="row">
+
+
+            <!-- ABOUT -->
+
+            <div class="col-lg-5 mb-4">
+
+
+                <h4>
+
+                    <i class="bi bi-airplane-fill"></i>
+
+                    Travel 360
+
+                </h4>
+
+
+                <p>
+
+                    Explore the world,
+                    discover new cultures,
+                    and create memories
+                    that last forever.
+
+                </p>
+
+
+                <div class="social-icons">
+
+
+                    <a href="#">
+
+                        <i class="bi bi-facebook"></i>
+
+                    </a>
+
+
+                    <a href="#">
+
+                        <i class="bi bi-instagram"></i>
+
+                    </a>
+
+
+                    <a href="#">
+
+                        <i class="bi bi-twitter-x"></i>
+
+                    </a>
+
+
+                    <a href="#">
+
+                        <i class="bi bi-youtube"></i>
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="col-lg-3 col-md-6 mb-4">
+
+
+                <h4>
+
+                    Quick Links
+
+                </h4>
+
+
+                <ul class="footer-links">
+
+
+                    <li>
+
+                        <a href="#home">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="#destinations">
+
+                            Destinations
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="#services">
+
+                            Services
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="#about">
+
+                            About Us
+
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+
+
+
+            <!-- CONTACT -->
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+
+                <h4>
+
+                    Contact Us
+
+                </h4>
+
+
+                <p>
+
+                    <i class="bi bi-geo-alt"></i>
+
+                    Hyderabad, India
+
+                </p>
+
+
+                <p>
+
+                    <i class="bi bi-envelope"></i>
+
+                    travel360@example.com
+
+                </p>
+
+
+                <p>
+
+                    <i class="bi bi-telephone"></i>
+
+                    +91 7815907692
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="copyright">
+
+            © 2026 Travel 360.
+            All Rights Reserved.
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+                       JAVASCRIPT
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js">
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js">
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+</body>
+
+</html>

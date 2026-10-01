@@ -1,0 +1,43 @@
+body{
+    background:#f8f9fa;
+}
+
+.hero{
+    background:linear-gradient(to right,#28a745,#20c997);
+    padding:90px 20px;
+}
+
+.hero h1{
+    font-size:50px;
+    font-weight:bold;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+.card{
+    transition:0.4s;
+    border:none;
+    border-radius:15px;
+}
+
+.card img{
+    height:220px;
+    object-fit:cover;
+    border-radius:15px 15px 0 0;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,.3);
+}
+
+.btn{
+    width:100%;
+}
+
+footer{
+    margin-top:50px;
+}
+
